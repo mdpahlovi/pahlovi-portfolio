@@ -13,45 +13,48 @@ const Navbar = () => {
     } md:opacity-100 md:translate-x-0`;
 
     return (
-        <nav className="sticky bg-base-100 shadow z-50">
-            <div className="my-container h-16 md:h-20 flex justify-between items-center">
-                <Link to="/" className="text-4xl font-bold">
-                    Pahlovi
-                </Link>
-                <div className="flex items-center gap-4">
-                    <label className="swap swap-rotate md:hidden">
-                        <input type="checkbox" onClick={() => setOpen(!open)} />
-                        <CgClose className="swap-on text-4xl" />
-                        <CgMenuRight className="swap-off text-4xl" />
-                    </label>
-                    <div className="md:hidden flex items-center">
-                        <ThemeToggle />
-                    </div>
-                </div>
-                <div className={nevMenu}>
-                    <div className="flex flex-col md:flex-row items-center py-3 gap-6">
-                        <NavLink to={"/"} className={navLink} end>
-                            Home
-                        </NavLink>
-                        <NavLink to={"/about"} className={navLink}>
-                            About
-                        </NavLink>
-                        <NavLink to={"/services"} className={navLink}>
-                            Services
-                        </NavLink>
-                        <NavLink to={"/works"} className={navLink}>
-                            Works
-                        </NavLink>
-                        <NavLink to={"/contact"} className={navLink}>
-                            Contact
-                        </NavLink>
-                        <div className="hidden md:flex">
+        <>
+            <nav className="fixed w-full bg-base-100 shadow-md z-50">
+                <div className="my-container h-16 md:h-20 flex justify-between items-center">
+                    <Link to="/" className="text-4xl font-bold">
+                        Pahlovi
+                    </Link>
+                    <div className="flex items-center gap-4">
+                        <label className="swap swap-rotate md:hidden">
+                            <input type="checkbox" onClick={() => setOpen(!open)} />
+                            <CgClose className="swap-on text-4xl" />
+                            <CgMenuRight className="swap-off text-4xl" />
+                        </label>
+                        <div className="md:hidden flex items-center">
                             <ThemeToggle />
                         </div>
                     </div>
+                    <div className={nevMenu}>
+                        <div className="flex flex-col md:flex-row items-center py-3 gap-6">
+                            <NavLink to={"/"} className={navLink} end>
+                                Home
+                            </NavLink>
+                            <NavLink to={"/about"} className={navLink}>
+                                About
+                            </NavLink>
+                            <NavLink to={"/services"} className={navLink}>
+                                Services
+                            </NavLink>
+                            <NavLink to={"/works"} className={navLink}>
+                                Works
+                            </NavLink>
+                            <NavLink to={"/contact"} className={navLink}>
+                                Contact
+                            </NavLink>
+                            <div className="hidden md:flex">
+                                <ThemeToggle />
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+            <div className="h-16 md:h-20 w-full opacity-0"></div>
+        </>
     );
 };
 

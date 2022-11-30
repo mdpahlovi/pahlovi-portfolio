@@ -1,11 +1,11 @@
 import React from "react";
-import Banner from "../Assets/Banner.svg";
+import Banner from "../../Assets/Banner.svg";
 import Typewriter from "typewriter-effect";
-import Button from "./Button";
+import Button from "../../Components/Button";
 
 const Hero = () => {
     return (
-        <section className="my-container section-gap pb-0 grid grid-cols-1 md:grid-cols-2 items-center gap-6">
+        <section className="my-container section-gap md:p-0 grid grid-cols-1 md:grid-cols-2 items-center gap-6">
             <div className="flex flex-col gap-4">
                 <h3 className="text-3xl lg:text-4xl">Hey,</h3>
                 <h1 className="title">I am MD Pahlovi</h1>
