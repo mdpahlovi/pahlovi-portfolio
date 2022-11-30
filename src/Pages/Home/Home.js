@@ -3,6 +3,8 @@ import Hero from "./Hero";
 import AboutMe from "../../Components/AboutMe";
 import { Tab } from "@headlessui/react";
 import Skills from "./Skills";
+import Experience from "./Experience";
+import Education from "./Education";
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
@@ -32,6 +34,12 @@ const Home = () => {
                     <Tab.Panels className="mt-4">
                         <Tab.Panel className={classNames("rounded-xl bg-base-content/5 p-3")}>
                             <Skills />
+                        </Tab.Panel>
+                        <Tab.Panel className={classNames("rounded-xl bg-base-content/5 p-3")}>
+                            <Experience />
+                        </Tab.Panel>
+                        <Tab.Panel className={classNames("rounded-xl bg-base-content/5 p-3")}>
+                            <Education />
                         </Tab.Panel>
                     </Tab.Panels>
                 </Tab.Group>

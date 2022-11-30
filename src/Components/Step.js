@@ -1,7 +1,7 @@
 import React from "react";
 import { HiShieldCheck } from "react-icons/hi";
 
-const SkillCard = ({ children, heading, end }) => {
+const Step = ({ children, heading, end }) => {
     return (
         <div className="flex">
             <div className="flex flex-col items-center mr-4">
@@ -10,12 +10,12 @@ const SkillCard = ({ children, heading, end }) => {
                 </div>
                 {end ? "" : <div className="w-px h-full bg-base-content" />}
             </div>
-            <div className="pt-1 pb-8">
-                <p className="mb-2 text-lg font-bold">{heading}</p>
-                <p>{children}</p>
+            <div className={`pt-2 ${end ? "" : "pb-6"}`}>
+                <p className="mb-0.5 text-lg font-bold">{heading}</p>
+                {children}
             </div>
         </div>
     );
 };
 
-export default SkillCard;
+export default Step;
