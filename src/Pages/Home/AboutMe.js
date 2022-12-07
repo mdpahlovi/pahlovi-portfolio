@@ -1,6 +1,6 @@
 import React from "react";
-import Profile from "../Assets/Profile.png";
-import Button from "./Button";
+import Profile from "../../Assets/Profile.png";
+import Button from "../../Components/Button";
 
 const AboutMe = () => {
     return (

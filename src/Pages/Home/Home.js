@@ -1,10 +1,11 @@
 import React from "react";
 import Hero from "./Hero";
-import AboutMe from "../../Components/AboutMe";
-import { Tab } from "@headlessui/react";
+import AboutMe from "./AboutMe";
 import Skills from "./Skills";
 import Experience from "./Experience";
 import Education from "./Education";
+import ContactForm from "./ContactForm";
+import { Tab } from "@headlessui/react";
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
@@ -44,6 +45,7 @@ const Home = () => {
                     </Tab.Panels>
                 </Tab.Group>
             </div>
+            <ContactForm />
         </>
     );
 };

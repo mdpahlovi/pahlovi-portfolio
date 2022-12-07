@@ -15,6 +15,9 @@
     .title {
         @apply text-[42px] leading-9 lg:leading-10 lg:text-5xl font-bold;
     }
+    .icon-bg {
+        @apply mr-5 p-5 rounded-lg bg-primary/5 text-primary text-2xl;
+    }
     .line-x {
         @apply flex items-center before:flex-1 before:border before:border-base-content/50  after:flex-1 after:border after:border-base-content/50;
     }

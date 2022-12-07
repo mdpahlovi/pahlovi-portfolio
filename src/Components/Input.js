@@ -1,6 +1,6 @@
 import React from "react";
 
-const Input = ({ type, name, text }) => {
+const Input = ({ type, name, text, textField }) => {
     const handelLabel = (event) => {
         const input = event.target;
         const label = event.target.nextSibling;
@@ -14,7 +14,12 @@ const Input = ({ type, name, text }) => {
     };
     return (
         <div onBlur={handelLabel} className="relative">
-            <input type={type} name={name} className="input-field peer" required={type === "email" || type === "password" ? true : false} />
+            <input
+                type={type}
+                name={name}
+                className={`input-field peer ${textField ? "h-20" : ""}`}
+                required={type === "email" || type === "password" ? true : false}
+            />
             <label htmlFor={name} className="input-label peer-focus:label-top">
                 {text}
             </label>

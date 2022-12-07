@@ -2,6 +2,7 @@ import React from "react";
 import Banner from "../../Assets/Banner.svg";
 import Typewriter from "typewriter-effect";
 import Button from "../../Components/Button";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
     return (
@@ -19,8 +20,12 @@ const Hero = () => {
                     />
                 </h3>
                 <div className="space-x-4 pt-2">
-                    <Button>Portfolio</Button>
-                    <Button>Contact Me</Button>
+                    <Link to="/works">
+                        <Button>Portfolio</Button>
+                    </Link>
+                    <Link to="/contact">
+                        <Button>Contact Me</Button>
+                    </Link>
                 </div>
             </div>
             <div className="hidden md:flex justify-end">
