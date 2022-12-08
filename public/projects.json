@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Ebay-Retail",
+        "category": "Retail Website",
+        "thumbnail": "https://i.ibb.co/ccN7bBz/Ebay-Retail-Light.png",
+        "images": "https://i.ibb.co/wSX7NVn/Ebay-Retail-Dark.png"
+    },
+    {
+        "name": "Shopnil Studio",
+        "category": "Photographer Site",
+        "thumbnail": "https://i.ibb.co/PNKkPHp/Pahlovi-Photographer.png",
+        "images": ""
+    },
+    {
+        "name": "Madroos",
+        "category": "Educational Site",
+        "thumbnail": "https://i.ibb.co/W0tktqv/Madroos-Light.png",
+        "images": "https://i.ibb.co/sRht4WR/Madroos-Dark.png"
+    }
+]
