@@ -3,7 +3,8 @@ import { Fragment } from "react";
 import Button from "./Button";
 
 export default function SeeDetailModal({ isOpen, setIsOpen, project }) {
-    const { name } = project;
+    const { name, client_site, server_site, overview } = project;
+    const overviews = overview.split("  ");
 
     return (
         <Transition appear show={isOpen} as={Fragment}>
@@ -30,16 +31,29 @@ export default function SeeDetailModal({ isOpen, setIsOpen, project }) {
                             leaveFrom="opacity-100 scale-100"
                             leaveTo="opacity-0 scale-95"
                         >
-                            <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-base-100 p-6 text-left align-middle shadow-xl transition-all">
-                                <Dialog.Title as="h3" className="text-lg">
-                                    {name}
-                                </Dialog.Title>
-                                <div className="mt-2">
-                                    <p className="text-sm">
-                                        Your payment has been successfully submitted. We’ve sent you an email with all of the details of your order.
-                                    </p>
+                            <Dialog.Panel className="w-full max-w-md sm:max-w-2xl transform overflow-hidden rounded-2xl bg-base-100 p-6 text-left shadow-xl transition-all space-y-4">
+                                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                                    <h3 className="text-2xl font-bold">{name}</h3>
+                                    <div className="flex flex-wrap gap-4">
+                                        <a href={client_site} target="_blank" rel="noreferrer">
+                                            <Button onClick={() => setIsOpen(false)}>Client Codes</Button>
+                                        </a>
+                                        <a href={server_site} target="_blank" rel="noreferrer">
+                                            <Button onClick={() => setIsOpen(false)}>Server Codes</Button>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div className="mt-4">
+                                <div className="space-y-2">
+                                    <h3 className="text-xl font-bold">Overview</h3>
+                                    <ul className="list-disc">
+                                        {overviews.map((overview, index) => (
+                                            <li className="ml-4" key={index}>
+                                                {overview}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                                <div>
                                     <Button onClick={() => setIsOpen(false)}>Got it, thanks!</Button>
                                 </div>
                             </Dialog.Panel>

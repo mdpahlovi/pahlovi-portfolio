@@ -20,7 +20,7 @@ const Hero = () => {
                     />
                 </h3>
                 <div className="space-x-4 pt-2">
-                    <Link to="/works">
+                    <Link to="/projects">
                         <Button>Portfolio</Button>
                     </Link>
                     <Link to="/contact">

@@ -40,8 +40,8 @@ const Navbar = () => {
                             <NavLink to={"/services"} className={navLink}>
                                 Services
                             </NavLink>
-                            <NavLink to={"/works"} className={navLink}>
-                                Works
+                            <NavLink to={"/projects"} className={navLink}>
+                                Projects
                             </NavLink>
                             <NavLink to={"/contact"} className={navLink}>
                                 Contact

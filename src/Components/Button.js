@@ -1,13 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-const Button = ({ children, to, onClick }) => {
+const Button = ({ children, onClick }) => {
     return (
-        <div className="inline-block group">
-            <Link
-                to={to}
+        <div className="group inline-block">
+            <button
                 onClick={onClick}
-                className="relative inline-flex items-center justify-start py-2.5 pl-4 pr-12 overflow-hidden font-semibold text-base-content transition-all duration-150 ease-in-out rounded group-hover:pl-10 group-hover:pr-6 bg-base-content/5 "
+                className="relative inline-flex items-center justify-start py-2.5 pl-4 pr-12 overflow-hidden font-semibold text-base-content transition-all duration-150 ease-in-out rounded group-hover:pl-10 group-hover:pr-6 bg-base-content/5"
             >
                 <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-primary group-hover:h-full"></span>
                 <span className="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
@@ -21,7 +19,7 @@ const Button = ({ children, to, onClick }) => {
                     </svg>
                 </span>
                 <span className="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white">{children}</span>
-            </Link>
+            </button>
         </div>
     );
 };

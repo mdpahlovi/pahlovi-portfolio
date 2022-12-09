@@ -7,7 +7,7 @@ import Register from "../Pages/Register";
 import Dashboard from "../Layouts/Dashboard";
 import Contact from "../Pages/Contact";
 import Services from "../Pages/Services";
-import Works from "../Pages/Works";
+import Projects from "../Pages/Projects";
 
 export const router = createBrowserRouter([
     {
@@ -27,8 +27,8 @@ export const router = createBrowserRouter([
                 element: <Services />,
             },
             {
-                path: "/works",
-                element: <Works />,
+                path: "/projects",
+                element: <Projects />,
             },
             {
                 path: "/contact",

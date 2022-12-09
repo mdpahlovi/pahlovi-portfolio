@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Hero from "./Hero";
 import AboutMe from "./AboutMe";
 import Skills from "./Skills";
@@ -7,7 +7,9 @@ import Education from "./Education";
 import ContactForm from "./ContactForm";
 import { Tab } from "@headlessui/react";
 import ProjectCard from "../../Components/ProjectCard";
-import { useState } from "react";
+import Button from "../../Components/Button";
+import ServiceCard from "../../Components/ServiceCard";
+import { Link } from "react-router-dom";
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
@@ -27,7 +29,7 @@ const Home = () => {
 
     useEffect(() => {
         window.addEventListener("resize", () => setWidth(window.innerWidth));
-        if (width <= 1024) {
+        if (width <= 1024 || width >= 1600) {
             setSize(4);
         } else {
             setSize(3);
@@ -68,10 +70,26 @@ const Home = () => {
                     </Tab.Panels>
                 </Tab.Group>
             </div>
-            <section className="my-container grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {projects.slice(0, size).map((project, index) => (
-                    <ProjectCard project={project} key={index} />
-                ))}
+            <section className="my-container space-y-8 pb-12 sm:pb-14 lg:pb-16">
+                <h1 className="title text-center pb-2">My Services</h1>
+                <div className="grid divide-y sm:divide-y-0 divide-base-content/50 overflow-hidden rounded-lg sm:grid-cols-2 lg:grid-cols-4 lg:divide-x">
+                    {[...Array(4)].map((project, index) => (
+                        <ServiceCard project={project} key={index} />
+                    ))}
+                </div>
+            </section>
+            <section className="my-container space-y-8">
+                <h1 className="title text-center pb-2">My Projects</h1>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6">
+                    {projects.slice(0, size).map((project, index) => (
+                        <ProjectCard project={project} key={index} />
+                    ))}
+                </div>
+                <div className="flex justify-center">
+                    <Link to="/projects">
+                        <Button>See All</Button>
+                    </Link>
+                </div>
             </section>
             <ContactForm />
         </>
