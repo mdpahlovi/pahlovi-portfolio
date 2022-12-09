@@ -2,7 +2,7 @@ import React from "react";
 
 const Button = ({ children, onClick }) => {
     return (
-        <div className="group inline-block">
+        <div className="group">
             <button
                 onClick={onClick}
                 className="relative inline-flex items-center justify-start py-2.5 pl-4 pr-12 overflow-hidden font-semibold text-base-content transition-all duration-150 ease-in-out rounded group-hover:pl-10 group-hover:pr-6 bg-base-content/5"

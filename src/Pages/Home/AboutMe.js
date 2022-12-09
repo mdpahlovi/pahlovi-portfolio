@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Profile from "../../Assets/Profile.png";
 import Button from "../../Components/Button";
 
@@ -15,14 +16,9 @@ const AboutMe = () => {
                     web projects. Having an in-depth knowledge including advanced HTML5, CSS3, JavaScript, TailwindCSS, React etc. Strong background in
                     management and teamwork.
                 </p>
-                <a
-                    className="block"
-                    target="_blank"
-                    href="https://drive.google.com/file/d/1-pLSfydm7KkuVH-D7NHkPzRc_i7HAnVO/view?usp=share_link"
-                    rel="noreferrer"
-                >
-                    <Button>Download CV</Button>
-                </a>
+                <Link to="/contact" className="block">
+                    <Button>Contact Me</Button>
+                </Link>
             </div>
         </section>
     );

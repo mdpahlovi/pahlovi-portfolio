@@ -19,12 +19,12 @@ const Hero = () => {
                         }}
                     />
                 </h3>
-                <div className="space-x-4 pt-2">
+                <div className="flex flex-wrap gap-4 pt-2">
+                    <a href="https://drive.google.com/file/d/1-pLSfydm7KkuVH-D7NHkPzRc_i7HAnVO/view?usp=share_link" target="_blank" rel="noreferrer">
+                        <Button>Download CV</Button>
+                    </a>
                     <Link to="/projects">
                         <Button>Portfolio</Button>
-                    </Link>
-                    <Link to="/contact">
-                        <Button>Contact Me</Button>
                     </Link>
                 </div>
             </div>

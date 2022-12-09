@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { TiHomeOutline, TiPhoneOutline } from "react-icons/ti";
 import { MdAlternateEmail } from "react-icons/md";
 import Input from "../../Components/Input";
-import ButtonSubmit from "../../Components/ButtonSubmit";
+import { toast } from "react-toastify";
 
 const ContactForm = () => {
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+        emailjs.sendForm("service_mcrcidj", "template_alwk0ge", form.current, "KpBLWelYY6loC3DE2").then(
+            (result) => {
+                toast.success("Successfully Sent Message");
+            },
+            (error) => {
+                toast.error(error.text);
+            }
+        );
+    };
+
     return (
         <section className="my-container section-gap">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
@@ -42,12 +57,12 @@ const ContactForm = () => {
                     </div>
                 </div>
                 <div className="rounded-lg">
-                    <form className="space-y-5">
-                        <Input type={"text"} name={"name"} text={"Your Name"} />
-                        <Input type={"email"} name={"email"} text={"Your Email"} />
+                    <form ref={form} className="space-y-5" onSubmit={sendEmail}>
+                        <Input type={"text"} name={"user_name"} text={"Your Name"} />
+                        <Input type={"email"} name={"user_email"} text={"Your Email"} />
                         <Input type={"text"} name={"phone"} text={"Your Phone"} />
                         <Input type={"text"} name={"message"} text={"Your Message"} textField />
-                        <ButtonSubmit>Submit</ButtonSubmit>
+                        <input type="submit" value="Send" className="btn btn-primary w-full" />
                     </form>
                 </div>
             </div>
