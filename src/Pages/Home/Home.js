@@ -20,11 +20,18 @@ const Home = () => {
     const [width, setWidth] = useState(window.innerWidth);
     const [size, setSize] = useState(3);
     const [projects, setProjects] = useState([]);
+    const [services, setServices] = useState([]);
 
     useEffect(() => {
         fetch("projects.json")
             .then((res) => res.json())
             .then((data) => setProjects(data));
+    }, []);
+
+    useEffect(() => {
+        fetch("services.json")
+            .then((res) => res.json())
+            .then((data) => setServices(data));
     }, []);
 
     useEffect(() => {
@@ -73,8 +80,8 @@ const Home = () => {
             <section className="my-container space-y-8 pb-12 sm:pb-14 lg:pb-16">
                 <h1 className="title text-center pb-2">My Services</h1>
                 <div className="grid divide-y sm:divide-y-0 divide-base-content/50 overflow-hidden rounded-lg sm:grid-cols-2 lg:grid-cols-4 lg:divide-x">
-                    {[...Array(4)].map((project, index) => (
-                        <ServiceCard project={project} key={index} />
+                    {services.map((service, index) => (
+                        <ServiceCard service={service} key={index} />
                     ))}
                 </div>
             </section>

@@ -1,13 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ServiceCard = () => {
+const ServiceCard = ({ service }) => {
+    const { name, icon } = service;
+
     return (
         <div className="group relative bg-base-content/5 transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
             <div className="relative space-y-8 py-12 p-8">
-                <img src="https://cdn-icons-png.flaticon.com/512/4341/4341139.png" className="w-12" width="512" height="512" alt="burger illustration" />
+                <img src={icon} className="w-12" width="512" height="512" alt={name} />
                 <div className="space-y-2">
-                    <h5 className="text-2xl font-bold transition group-hover:text-primary">First feature</h5>
+                    <h5 className="text-2xl font-bold transition group-hover:text-primary">{name}</h5>
                     <p className="opacity-70">Neque Dolor, fugiat non cum doloribus aperiam voluptates nostrum.</p>
                 </div>
                 <Link className="flex items-center justify-between group-hover:text-primary">

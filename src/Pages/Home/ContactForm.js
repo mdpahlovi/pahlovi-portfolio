@@ -4,14 +4,18 @@ import { TiHomeOutline, TiPhoneOutline } from "react-icons/ti";
 import { MdAlternateEmail } from "react-icons/md";
 import Input from "../../Components/Input";
 import { toast } from "react-toastify";
+import { useState } from "react";
 
 const ContactForm = () => {
     const form = useRef();
+    const [loading, setLoading] = useState(false);
 
     const sendEmail = (e) => {
         e.preventDefault();
+        setLoading(true);
         emailjs.sendForm("service_mcrcidj", "template_alwk0ge", form.current, "KpBLWelYY6loC3DE2").then(
             (result) => {
+                setLoading(false);
                 toast.success("Successfully Sent Message");
             },
             (error) => {
@@ -58,11 +62,14 @@ const ContactForm = () => {
                 </div>
                 <div className="rounded-lg">
                     <form ref={form} className="space-y-5" onSubmit={sendEmail}>
-                        <Input type={"text"} name={"user_name"} text={"Your Name"} />
-                        <Input type={"email"} name={"user_email"} text={"Your Email"} />
-                        <Input type={"text"} name={"phone"} text={"Your Phone"} />
-                        <Input type={"text"} name={"message"} text={"Your Message"} textField />
-                        <input type="submit" value="Send" className="btn btn-primary w-full" />
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <Input type={"text"} name={"name"} text={"Name"} />
+                            <Input type={"text"} name={"phone"} text={"Phone"} />
+                        </div>
+                        <Input type={"email"} name={"email"} text={"Email"} />
+                        <Input type={"text"} name={"subject"} text={"Subject"} />
+                        <Input type={"text"} name={"message"} text={"Message"} textField />
+                        <input type="submit" value={loading ? "Sending..." : "Sent Message"} className="btn btn-primary w-full" />
                     </form>
                 </div>
             </div>
