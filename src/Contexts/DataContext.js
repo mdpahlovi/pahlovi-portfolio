@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
+import { CirclesWithBar } from "react-loader-spinner";
 
 export const LoadData = createContext();
 
@@ -35,9 +36,17 @@ const DataContext = ({ children }) => {
             setTheme("light");
         }
     }, []);
-    const data = { services, projects, projectLoading, serviceLoading, theme, setTheme };
+    const data = { services, projects, theme, setTheme };
 
-    return <LoadData.Provider value={data}>{children}</LoadData.Provider>;
+    if (projectLoading || serviceLoading) {
+        return (
+            <div className="w-full h-screen flex justify-center items-center">
+                <CirclesWithBar height="100" width="100" color="#9615DB" />
+            </div>
+        );
+    } else {
+        return <LoadData.Provider value={data}>{children}</LoadData.Provider>;
+    }
 };
 
 export default DataContext;

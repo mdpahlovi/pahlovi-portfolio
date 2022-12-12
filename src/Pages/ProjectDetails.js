@@ -6,6 +6,7 @@ import { LoadData } from "../Contexts/DataContext";
 const ProjectDetails = () => {
     const params = useParams();
     const { projects } = useContext(LoadData);
+
     const project = projects.find((project) => project.name.toLowerCase() === params.name);
     const { name, category, images, live_site, client_site, server_site, overview, technology } = project;
     const overviews = overview.split("  ");
