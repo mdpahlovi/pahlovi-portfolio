@@ -3,40 +3,48 @@
         "name": "Ebay-Retail",
         "category": "Retail Website",
         "thumbnail": "https://i.ibb.co/ccN7bBz/Ebay-Retail-Light.png",
-        "images": "https://i.ibb.co/wSX7NVn/Ebay-Retail-Dark.png",
+        "images": ["https://i.ibb.co/bWQnLH5/Ebay-Retail-01.png", "https://i.ibb.co/Nr7nxSd/Ebay-Retail-02.png", "https://i.ibb.co/rfp5HWP/Ebay-Retail-03.png"],
         "live_site": "https://ebay-retail.web.app/",
         "client_site": "https://github.com/mdpahlovi/ebay-retail-client",
         "server_site": "https://github.com/mdpahlovi/ebay-retail-server",
+        "technology": ["JavaScript", "React.js", "TailwindCSS", "DaisyUi", "React Router", "Node.js", "Express.js", "Mongodb", "Firebase"],
         "overview": "Retail website including dashboard panel. It will vary for different roles like admin, buyer and seller.   Admin can see & delete any buyer & seller. Seller can add new product, see & delete his own product. Buyer can book any product & see his booking details.   Firebase Authentication Email & Password , Google , Github & Facebook base. JWT verification also added.   Fully responsive & Switch between Light & Dark Mode."
     },
     {
         "name": "Creative Eyes",
         "category": "Photographic Site",
         "thumbnail": "https://i.ibb.co/RS3P26C/Creative-Eyes.png",
-        "images": "",
+        "images": [
+            "https://i.ibb.co/gvmLPYS/Creative-Eyes-Photography-01.png",
+            "https://i.ibb.co/YWMMhpf/Creative-Eyes-Login-02.png",
+            "https://i.ibb.co/PxzyYYD/Creative-Eyes-Photography-03.png"
+        ],
         "live_site": "https://creative-eyes.web.app/",
         "client_site": "https://github.com/mdpahlovi/creative-eyes-client",
         "server_site": "https://github.com/mdpahlovi/creative-eyes-server",
+        "technology": ["JavaScript", "React.js", "TailwindCSS", "Material Tailwind", "React Router", "Node.js", "Express.js", "Mongodb", "Firebase"],
         "overview": "Photographic site, here you can see photographic services. Logged in user can add, edit & delete services. After click service image it show up in full view.   Firebase Authentication Email & Password Base & Google.   On service details page you can sell all user reviews. Logged in user can add, edit & delete his/her review. Switch between Light & Dark Mode."
     },
     {
         "name": "Madroos",
         "category": "Educational Site",
         "thumbnail": "https://i.ibb.co/W0tktqv/Madroos-Light.png",
-        "images": "https://i.ibb.co/sRht4WR/Madroos-Dark.png",
+        "images": ["https://i.ibb.co/D7p3fgL/Madroos-01.png", "https://i.ibb.co/hCVPFdZ/Madroos-02.png", "https://i.ibb.co/5BGYLq1/Madroos-03.png"],
         "live_site": "https://madroos-e.web.app/",
         "client_site": "https://github.com/mdpahlovi/madroos-client",
         "server_site": "https://github.com/mdpahlovi/madroos-server",
+        "technology": ["JavaScript", "React.js", "TailwindCSS", "DaisyUi", "React Router", "Node.js", "Express.js", "Mongodb", "Firebase"],
         "overview": "Educational website, here you can see education services. Logged in user can add, edit & delete services. After click service image it show up in full view.   Firebase Authentication Email & Password Base & Google.   You can sell all user review. Logged in user can add, edit & delete his/her review. Switch between Light & Dark Mode."
     },
     {
         "name": "Madroos",
         "category": "Educational Site",
         "thumbnail": "https://i.ibb.co/W0tktqv/Madroos-Light.png",
-        "images": "https://i.ibb.co/sRht4WR/Madroos-Dark.png",
+        "images": ["https://i.ibb.co/D7p3fgL/Madroos-01.png", "https://i.ibb.co/hCVPFdZ/Madroos-02.png", "https://i.ibb.co/5BGYLq1/Madroos-03.png"],
         "live_site": "https://madroos-e.web.app/",
         "client_site": "https://github.com/mdpahlovi/madroos-client",
         "server_site": "https://github.com/mdpahlovi/madroos-server",
+        "technology": ["JavaScript", "React.js", "TailwindCSS", "DaisyUi", "React Router", "Node.js", "Express.js", "Mongodb", "Firebase"],
         "overview": ""
     }
 ]

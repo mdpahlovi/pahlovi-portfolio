@@ -7,7 +7,8 @@ const Navbar = () => {
     const [open, setOpen] = useState(true);
 
     // Navbar CSS
-    const navLink = ({ isActive }) => (isActive ? "font-bold underline" : "");
+    const itemActive = "border-b-4 border-primary rounded-lg px-4 py-2 text-primary font-bold";
+    const navLink = ({ isActive }) => (isActive ? itemActive : "hover:text-primary hover:font-bold");
     const nevMenu = `bg-base-100 md:bg-transparent w-full md:w-auto fixed md:static top-16 left-0 pb-5 md:pb-0 transition-all duration-500 ${
         open ? "-translate-x-full opacity-0" : "translate-x-0 opacity-100"
     } md:opacity-100 md:translate-x-0`;
@@ -44,7 +45,7 @@ const Navbar = () => {
                                 Projects
                             </NavLink>
                             <NavLink to={"/contact"} className={navLink}>
-                                Contact
+                                Contact Me
                             </NavLink>
                             <div className="hidden md:flex">
                                 <ThemeToggle />

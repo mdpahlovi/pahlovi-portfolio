@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 import Button from "./Button";
-import SeeDetailModal from "./SeeDetailModal";
 
 const ProjectCard = ({ project }) => {
-    const [isOpen, setIsOpen] = useState(false);
     const { name, category, thumbnail, live_site } = project;
+    const route = name.toLowerCase();
 
     return (
         <div className="group relative block bg-black">
@@ -19,8 +19,9 @@ const ProjectCard = ({ project }) => {
                         <a href={live_site} target="_blank" rel="noreferrer">
                             <Button>Live Site</Button>
                         </a>
-                        <Button onClick={() => setIsOpen(true)}>See Details</Button>
-                        <SeeDetailModal isOpen={isOpen} setIsOpen={setIsOpen} project={project} />
+                        <Link to={`/projects/${route}`}>
+                            <Button>See Details</Button>
+                        </Link>
                     </div>
                 </div>
             </div>

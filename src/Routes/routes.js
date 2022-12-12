@@ -8,6 +8,7 @@ import Dashboard from "../Layouts/Dashboard";
 import Contact from "../Pages/Contact";
 import Services from "../Pages/Services";
 import Projects from "../Pages/Projects";
+import ProjectDetails from "../Pages/ProjectDetails";
 
 export const router = createBrowserRouter([
     {
@@ -29,6 +30,10 @@ export const router = createBrowserRouter([
             {
                 path: "/projects",
                 element: <Projects />,
+            },
+            {
+                path: "/projects/:name",
+                element: <ProjectDetails />,
             },
             {
                 path: "/contact",
