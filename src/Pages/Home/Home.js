@@ -39,7 +39,7 @@ const Home = () => {
         <>
             <Hero />
             <AboutMe />
-            <div className="my-container section-gap">
+            <div data-aos="zoom-out" data-aos-offset="500" data-aos-easing="linear" data-aos-duration="500" className="my-container section-gap">
                 <Tab.Group>
                     <Tab.List className="flex space-x-1 rounded-xl bg-base-content/5 p-1">
                         {titles.map((title, index) => (
@@ -68,7 +68,13 @@ const Home = () => {
             </div>
             <section className="my-container space-y-8 pb-12 sm:pb-14 lg:pb-16">
                 <h1 className="title text-center pb-2">My Services</h1>
-                <div className="grid divide-y sm:divide-y-0 divide-base-content/50 overflow-hidden rounded-lg sm:grid-cols-2 lg:grid-cols-4 lg:divide-x">
+                <div
+                    data-aos="zoom-out-up"
+                    data-aos-offset="500"
+                    data-aos-duration="500"
+                    data-aos-easing="linear"
+                    className="grid divide-y sm:divide-y-0 divide-base-content/50 overflow-hidden rounded-lg sm:grid-cols-2 lg:grid-cols-4 lg:divide-x"
+                >
                     {services.map((service, index) => (
                         <ServiceCard service={service} key={index} />
                     ))}

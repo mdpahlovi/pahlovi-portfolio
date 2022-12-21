@@ -6,7 +6,12 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
     return (
-        <section className="my-container section-gap md:p-0 grid grid-cols-1 md:grid-cols-2 items-center gap-6">
+        <section
+            data-aos="fade-down"
+            data-aos-easing="linear"
+            data-aos-duration="750"
+            className="my-container section-gap md:p-0 grid grid-cols-1 md:grid-cols-2 items-center gap-6"
+        >
             <div className="flex flex-col gap-4">
                 <h3 className="text-3xl lg:text-4xl">Hey,</h3>
                 <h1 className="title">I am MD Pahlovi</h1>

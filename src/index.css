@@ -21,6 +21,9 @@
     .line-x {
         @apply flex items-center before:flex-1 before:border before:border-base-content/50  after:flex-1 after:border after:border-base-content/50;
     }
+    .img-cover {
+        @apply absolute w-full h-full object-cover rounded-lg shadow-lg;
+    }
     .input {
         @apply focus:outline-none;
     }
