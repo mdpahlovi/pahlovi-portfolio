@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import ThemeToggle from "../Components/ThemeToggle";
 import { CgMenuRight, CgClose } from "react-icons/cg";
 import { Link, NavLink } from "react-router-dom";
+import ThemeToggle from "../../Components/ThemeToggle";
 
 const Navbar = () => {
     const [open, setOpen] = useState(true);

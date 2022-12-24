@@ -23,7 +23,7 @@ module.exports = {
             },
         },
     },
-    plugins: [require("@tailwindcss/line-clamp"), require("daisyui")],
+    plugins: [require("@tailwindcss/line-clamp"), require("daisyui"), require("tailwind-scrollbar")],
 
     // DaisyUI Customized
     daisyui: {

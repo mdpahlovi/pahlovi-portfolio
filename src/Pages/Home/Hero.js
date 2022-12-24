@@ -12,7 +12,7 @@ const Hero = () => {
             data-aos-duration="750"
             className="my-container section-gap md:p-0 grid grid-cols-1 md:grid-cols-2 items-center gap-6"
         >
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 md:px-6">
                 <h3 className="text-3xl lg:text-4xl">Hey,</h3>
                 <h1 className="title">I am MD Pahlovi</h1>
                 <h3 className="text-2xl lg:text-3xl">

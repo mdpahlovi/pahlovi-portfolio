@@ -21,6 +21,12 @@
     .line-x {
         @apply flex items-center before:flex-1 before:border before:border-base-content/50  after:flex-1 after:border after:border-base-content/50;
     }
+    .scroll {
+        @apply scrollbar-thin scrollbar-thumb-primary scrollbar-track-base-content;
+    }
+    .db-icon {
+        @apply w-8 h-8 mr-3 flex items-center justify-center rounded bg-base-content text-base-100;
+    }
     .img-cover {
         @apply absolute w-full h-full object-cover rounded-lg shadow-lg;
     }

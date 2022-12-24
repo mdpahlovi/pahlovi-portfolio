@@ -9,6 +9,9 @@ import Contact from "../Pages/Contact";
 import Services from "../Pages/Services";
 import Projects from "../Pages/Projects";
 import ProjectDetails from "../Pages/ProjectDetails";
+import DBHome from "../Pages/Dashboard/DBHome";
+import DBProjects from "../Pages/Dashboard/DBProjects";
+import DBUsers from "../Pages/Dashboard/DBUsers";
 
 export const router = createBrowserRouter([
     {
@@ -32,7 +35,7 @@ export const router = createBrowserRouter([
                 element: <Projects />,
             },
             {
-                path: "/projects/:name",
+                path: "/project/:id",
                 element: <ProjectDetails />,
             },
             {
@@ -55,6 +58,15 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: "/dashboard",
+                element: <DBHome />,
+            },
+            {
+                path: "/dashboard/projects",
+                element: <DBProjects />,
+            },
+            {
+                path: "/dashboard/users",
+                element: <DBUsers />,
             },
         ],
     },

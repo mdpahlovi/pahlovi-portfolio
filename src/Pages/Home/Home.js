@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React from "react";
 import Hero from "./Hero";
 import AboutMe from "./AboutMe";
 import Skills from "./Skills";
@@ -6,11 +6,10 @@ import Experience from "./Experience";
 import Education from "./Education";
 import ContactForm from "./ContactForm";
 import { Tab } from "@headlessui/react";
-import { LoadData } from "../../Contexts/DataContext";
-import ProjectCard from "../../Components/ProjectCard";
 import Button from "../../Components/Button";
-import ServiceCard from "../../Components/ServiceCard";
 import { Link } from "react-router-dom";
+import MyProject from "../Components/MyProject";
+import MyService from "../Components/MyService";
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
@@ -18,28 +17,12 @@ function classNames(...classes) {
 
 const Home = () => {
     const titles = ["Skills", "Experience", "Education"];
-    const [width, setWidth] = useState(window.innerWidth);
-    const [size, setSize] = useState(3);
-    const { projects, services } = useContext(LoadData);
-
-    // Set different size for Different Screen
-    useEffect(() => {
-        window.addEventListener("resize", () => setWidth(window.innerWidth));
-        if (width <= 1024 || width >= 1600) {
-            setSize(4);
-        } else {
-            setSize(3);
-        }
-        return () => {
-            window.removeEventListener("resize", () => setWidth(window.innerWidth));
-        };
-    }, [width]);
 
     return (
         <>
             <Hero />
             <AboutMe />
-            <div data-aos="zoom-out" data-aos-offset="500" data-aos-easing="linear" data-aos-duration="500" className="my-container section-gap">
+            <div data-aos="zoom-out" className="my-container section-gap">
                 <Tab.Group>
                     <Tab.List className="flex space-x-1 rounded-xl bg-base-content/5 p-1">
                         {titles.map((title, index) => (
@@ -53,7 +36,7 @@ const Home = () => {
                             </Tab>
                         ))}
                     </Tab.List>
-                    <Tab.Panels className="mt-4">
+                    <Tab.Panels className="mt-8">
                         <Tab.Panel className={classNames("rounded-xl bg-base-content/5 p-3")}>
                             <Skills />
                         </Tab.Panel>
@@ -68,25 +51,11 @@ const Home = () => {
             </div>
             <section className="my-container space-y-8 pb-12 sm:pb-14 lg:pb-16">
                 <h1 className="title text-center pb-2">My Services</h1>
-                <div
-                    data-aos="zoom-out-up"
-                    data-aos-offset="500"
-                    data-aos-duration="500"
-                    data-aos-easing="linear"
-                    className="grid divide-y sm:divide-y-0 divide-base-content/50 overflow-hidden rounded-lg sm:grid-cols-2 lg:grid-cols-4 lg:divide-x"
-                >
-                    {services.map((service, index) => (
-                        <ServiceCard service={service} key={index} />
-                    ))}
-                </div>
+                <MyService />
             </section>
             <section className="my-container space-y-8">
                 <h1 className="title text-center pb-2">My Projects</h1>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6">
-                    {projects.slice(0, size).map((project, index) => (
-                        <ProjectCard project={project} key={index} />
-                    ))}
-                </div>
+                <MyProject res={true} />
                 <div className="flex justify-center">
                     <Link to="/projects">
                         <Button>See All</Button>

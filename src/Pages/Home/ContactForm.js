@@ -47,7 +47,7 @@ const ContactForm = () => {
                         </div>
                         <div className="w-full">
                             <h4 className="font-bold text-xl mb-1">Phone Number</h4>
-                            <p className="opacity-70">(+880)1736817612</p>
+                            <p className="opacity-70">+880-1736817612 (WhatsApp)</p>
                         </div>
                     </div>
                     <div className="flex items-center">
